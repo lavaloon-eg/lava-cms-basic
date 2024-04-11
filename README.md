@@ -1,7 +1,2 @@
-## Lava Cms Basic
-
-Handles the standard translation using the app's custom doctypes
-
-#### License
-
-agpl-3.0
+# lava-cms-basic
+Frappe app handles the standard translations through managing the app custom doctypes.
