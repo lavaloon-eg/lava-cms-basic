@@ -1,0 +1,79 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-04-09 21:40:37.790560",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "column_break_wtvt",
+  "page",
+  "website_page_block",
+  "block_key",
+  "language",
+  "content"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_wtvt",
+   "fieldtype": "Column Break",
+   "is_virtual": 1
+  },
+  {
+   "fieldname": "page",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Page",
+   "options": "Website Page",
+   "reqd": 1
+  },
+  {
+   "fieldname": "website_page_block",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Website Page Block",
+   "options": "Website Page Block",
+   "reqd": 1
+  },
+  {
+   "fieldname": "block_key",
+   "fieldtype": "Data",
+   "label": "Block key",
+   "read_only": 1
+  },
+  {
+   "fieldname": "language",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Language",
+   "options": "ar\nen\nfr",
+   "reqd": 1,
+   "sort_options": 1
+  },
+  {
+   "fieldname": "content",
+   "fieldtype": "HTML Editor",
+   "ignore_xss_filter": 1,
+   "in_list_view": 1,
+   "label": "Content",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-04-11 21:31:36.185170",
+ "modified_by": "Administrator",
+ "module": "Lava Cms Basic",
+ "name": "Website Page Block Translation",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

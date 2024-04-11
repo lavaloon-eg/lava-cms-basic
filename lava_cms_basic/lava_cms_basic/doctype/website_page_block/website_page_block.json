@@ -1,0 +1,98 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-04-09 21:27:41.356570",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "main_details_section",
+  "title",
+  "page",
+  "block_key",
+  "block_translations_tab",
+  "translations"
+ ],
+ "fields": [
+  {
+   "fieldname": "main_details_section",
+   "fieldtype": "Section Break",
+   "label": "Main details"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "page",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Page",
+   "options": "Website Page",
+   "reqd": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "block_key",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Block Key",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "block_translations_tab",
+   "fieldtype": "Tab Break",
+   "label": "Block Translations"
+  },
+  {
+   "fieldname": "translations",
+   "fieldtype": "Table",
+   "label": "Translations",
+   "options": "Website Page Block Translation"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-04-11 21:31:00.378629",
+ "modified_by": "Administrator",
+ "module": "Lava Cms Basic",
+ "name": "Website Page Block",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "search_fields": "title,block_key",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title"
+}
