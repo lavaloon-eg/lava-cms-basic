@@ -1,7 +1,7 @@
 [pre_model_sync]
 # Patches added in this section will be executed before doctypes are migrated
-# Read docs to understand patches: https://frappeframework.com/docs/v14/user/en/database-migrations
 
 [post_model_sync]
 # Patches added in this section will be executed after doctypes are migrated
 lava_cms_basic.patches._2024_4_12_migrate_translation_records #2024-04-12 02:08
+lava_cms_basic.patches._2024_4_12_create_lava_cms_basic_workspace #2024-04-12 16:01
