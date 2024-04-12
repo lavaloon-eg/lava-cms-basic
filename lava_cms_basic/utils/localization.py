@@ -1,4 +1,5 @@
 import frappe
+import json
 
 
 @frappe.whitelist()
@@ -17,10 +18,12 @@ def format_language_key(language_key, default_language_key: str = 'ar'):
 
 
 @frappe.whitelist()
-def get_page_content_list(page_id):
+def get_page_content_list(page_id: str, filters=None):
     if not page_id:
         frappe.msgprint('Make sure of selecting an existing page')
         return
+
+    filters = json.loads(filters)
 
     sql = f"""
             SELECT b.name AS block_id,
@@ -33,10 +36,32 @@ def get_page_content_list(page_id):
                 `tabWebsite Page Block Translation` AS t
                 ON b.name = t.website_page_block
             WHERE
-                b.page = '{page_id}'
+                b.page = %(page_id)s
+            """
+
+    if filters:
+        if filters["language"] and filters["language"] != "All":
+            sql += f"""
+                    AND t.language = %(language)s
+                    """
+        if filters["block_key"]:
+            sql += f"""
+                    AND b.block_key LIKE %(block_key)s
+                    """
+        if filters["block_title"]:
+            sql += f"""
+                    AND b.block_title LIKE %(block_title)s
+                    """
+
+    sql += f"""
             ORDER BY b.title, b.block_key, t.language
             """
-    records = frappe.db.sql(sql, as_dict=1)
+    records = frappe.db.sql(sql, values={
+        "page_id": page_id,
+        "language": filters["language"],
+        "block_key": f"%{filters['block_key']}%",
+        "block_title": f"%{filters['block_title']}%"
+    }, as_dict=1)
     return records
 
 
