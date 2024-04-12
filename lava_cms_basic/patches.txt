@@ -4,3 +4,4 @@
 
 [post_model_sync]
 # Patches added in this section will be executed after doctypes are migrated
+lava_cms_basic.patches._2024_4_12_migrate_translation_records #2024-04-12 02:08
