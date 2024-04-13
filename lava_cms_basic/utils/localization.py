@@ -50,7 +50,7 @@ def get_page_content_list(page_id: str, filters=None):
                     """
         if filters["block_title"]:
             sql += f"""
-                    AND b.block_title LIKE %(block_title)s
+                    AND b.title LIKE %(block_title)s
                     """
 
     sql += f"""
