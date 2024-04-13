@@ -1,9 +1,18 @@
 import frappe
 import json
 
+def get_default_language_key():
+    """
+    returns the default language key from website settings
+    """
+    lang_key = frappe.db.get_single_value('Website Page Settings', 'default_lang')
+    if lang_key:
+        return str(lang_key)
+    else:
+        return 'en'
 
 @frappe.whitelist()
-def format_language_key(language_key, default_language_key: str = 'ar'):
+def format_language_key(language_key, default_language_key: str = get_default_language_key()):
     """
     set the session language of the user. The method identifies the language based on
     the first 2 letters lower case. If not en (English), this means ar (Arabic)
