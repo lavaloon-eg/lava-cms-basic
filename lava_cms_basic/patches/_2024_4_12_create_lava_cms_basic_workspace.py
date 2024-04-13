@@ -26,7 +26,13 @@ def _add_lava_cms_basic_workspace():
                 "label": "Website Page Block",
                 "link_to": "Website Page Block",
                 "doctype": "DocType"
-            }
+            },
+            {
+                "doc_view": "List",
+                "label": "Website Page Settings",
+                "link_to": "Website Page Settings",
+                "doctype": "DocType"
+            },
         ]
         roles = [
             {
