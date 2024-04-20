@@ -12,11 +12,12 @@ def get_default_language_key():
         return 'en'
 
 @frappe.whitelist()
-def format_language_key(language_key, default_language_key: str = get_default_language_key()):
+def format_language_key(language_key, default_language_key: str | None = None):
     """
     set the session language of the user. The method identifies the language based on
     the first 2 letters lower case. If not en (English), this means ar (Arabic)
     """
+    default_language_key = default_language_key or get_default_language_key()
     if len(language_key) < 2:
         frappe.throw(msg="the language key's length must be >=2 characters",
                      exc=ValueError)
