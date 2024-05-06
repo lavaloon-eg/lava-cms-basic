@@ -57,7 +57,7 @@
   },
   {
    "fieldname": "content",
-   "fieldtype": "HTML Editor",
+   "fieldtype": "Text Editor",
    "ignore_xss_filter": 1,
    "in_list_view": 1,
    "label": "Content",
@@ -67,7 +67,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-04-11 21:31:36.185170",
+ "modified": "2024-05-06 09:08:52.405737",
  "modified_by": "Administrator",
  "module": "Lava Cms Basic",
  "name": "Website Page Block Translation",
