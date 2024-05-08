@@ -5,6 +5,6 @@ lava_cms_basic.patches._2024_4_17_remove_translation_page_from_database #2024-04
 
 [post_model_sync]
 # Patches added in this section will be executed after doctypes are migrated
-lava_cms_basic.patches._2024_4_12_migrate_translation_records #2024-04-13 02:08
+lava_cms_basic.patches._2024_4_12_migrate_translation_records #2024-05-07 02:08
 lava_cms_basic.patches._2024_4_12_create_lava_cms_basic_workspace #2024-05-07 16:01
 lava_cms_basic.patches._2024_4_17_remove_translation_page_folder #2024-04-18 11:22
