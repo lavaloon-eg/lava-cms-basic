@@ -24,6 +24,8 @@ def format_language_key(language_key, default_language_key: str | None = None):
     selected_language = default_language_key
     if language_key[:2].lower() == "en":
         selected_language = "en"
+    else:
+        selected_language = "ar"
     return selected_language
 
 
@@ -82,7 +84,7 @@ def add_update_translation_content(block_key: str, updated_content: str, languag
     formated_language = format_language_key(language_key=language)
     translation_ids = frappe.get_list(
         "Translation", {"source_text": block_key,
-                        "language": formated_language})
+                        "language": ['LIKE', f"{formated_language}%"]})
     if translation_ids:
         for translation_id in translation_ids:
             translation_doc = frappe.get_doc("Translation", translation_id)
@@ -106,7 +108,7 @@ def delete_translation_record(block_key: str, language: str):
     formated_language = format_language_key(language_key=language)
     translation_ids = frappe.get_list("Translation",
                                       filters={"source_text": block_key,
-                                               "language": formated_language})
+                                               "language": ['LIKE', f"{formated_language}%"]})
 
     for translation_id in translation_ids:
         translation_doc = frappe.get_doc("Translation", translation_id)
