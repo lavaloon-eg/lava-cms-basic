@@ -82,7 +82,7 @@ def add_update_translation_content(block_key: str, updated_content: str, languag
     formated_language = format_language_key(language_key=language)
     translation_ids = frappe.get_list(
         "Translation", {"source_text": block_key,
-                        "language": ['LIKE', f"{formated_language}%"]})
+                        "language": formated_language})
     if translation_ids:
         for translation_id in translation_ids:
             translation_doc = frappe.get_doc("Translation", translation_id)
@@ -106,7 +106,7 @@ def delete_translation_record(block_key: str, language: str):
     formated_language = format_language_key(language_key=language)
     translation_ids = frappe.get_list("Translation",
                                       filters={"source_text": block_key,
-                                               "language": ['LIKE', f"{formated_language}%"]})
+                                               "language": formated_language})
 
     for translation_id in translation_ids:
         translation_doc = frappe.get_doc("Translation", translation_id)
